@@ -1,10 +1,9 @@
-import React, { useEffect } from 'react'
-import { useDispatch, useSelector } from 'react-redux'
+import React from 'react'
+import { useSelector } from 'react-redux'
 import Head from './head'
 import Card from './card'
 
 const Dummy = () => {
-  const dispatch = useDispatch()
   const { data } = useSelector((s) => s.dataset)
   const { searchTerm } = useSelector((s) => s.dataset)
 
