@@ -6,13 +6,19 @@ const GET_SEARCH_TEXT = 'GET_SEARCH_TEXT'
 const initialState = {
   data: [],
   globalNumbers: {},
-  searchTerm: ''
+  searchTerm: '',
+  isLoading: true
 }
 
 export default (state = initialState, action) => {
   switch (action.type) {
     case GET_DATA: {
-      return { ...state, data: action.data, globalNumbers: action.globalNumbers }
+      return {
+        ...state,
+        data: action.data,
+        globalNumbers: action.globalNumbers,
+        isLoading: action.loading
+      }
     }
     case GET_SEARCH_TEXT: {
       return { ...state, searchTerm: action.text }
@@ -25,7 +31,7 @@ export default (state = initialState, action) => {
 export function getData() {
   return async (dispatch) => {
     const { data } = await axios('https://api.covid19api.com/summary')
-    dispatch({ type: GET_DATA, data: data.Countries, globalNumbers: data.Global })
+    dispatch({ type: GET_DATA, data: data.Countries, globalNumbers: data.Global, loading: false })
   }
 }
 

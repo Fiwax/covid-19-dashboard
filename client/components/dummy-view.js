@@ -31,7 +31,8 @@ const Dummy = () => {
               NewRecovered,
               TotalConfirmed,
               TotalDeaths,
-              TotalRecovered
+              TotalRecovered,
+              Date
             } = country
             return (
               <div key={ID}>
@@ -43,6 +44,7 @@ const Dummy = () => {
                   TotalConfirmed={TotalConfirmed}
                   TotalDeaths={TotalDeaths}
                   TotalRecovered={TotalRecovered}
+                  Date={Date}
                 />
               </div>
             )

@@ -5,7 +5,6 @@ import { getSearchText } from '../redux/reducers/dataset'
 const Header = () => {
   const dispatch = useDispatch()
   const { globalNumbers } = useSelector((s) => s.dataset)
-  console.log(globalNumbers)
   const { TotalConfirmed } = globalNumbers
   return (
     <div className="flex justify-between items-center p-4 bg-gray-900">
@@ -19,10 +18,10 @@ const Header = () => {
       </div>
       <div>
         <input
-          className="px-2 py-1 rounded"
+          className="px-1 py-2 rounded"
           onChange={(e) => dispatch(getSearchText(e.target.value))}
           type="search"
-          placeholder="search a country.."
+          placeholder="Search a country.."
         />
       </div>
     </div>

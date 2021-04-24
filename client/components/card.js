@@ -1,4 +1,5 @@
 import React from 'react'
+import moment from 'moment'
 import Head from './head'
 
 const Card = ({
@@ -8,16 +9,15 @@ const Card = ({
   NewRecovered,
   TotalConfirmed,
   TotalDeaths,
-  TotalRecovered
+  TotalRecovered,
+  Date
 }) => {
   return (
     <div>
       <Head title="Hello" />
       <div className="flex my-2 mx-2">
-        <div className="px-4 py-5 bg-gray-800 border-content flex flex-col text-white rounded-lg shadow-lg w-64 h-64">
-          <h2 className="flex truncate justify-center text-center font-bold">
-            {Country}
-          </h2>
+        <div className="px-4 pt-2 bg-gray-800 border-content flex flex-col text-white rounded-lg shadow-lg w-64 h-64">
+          <h2 className="flex truncate justify-center text-center font-bold">{Country}</h2>
           <ul className="py-2 font-normal text-sm">
             <li className="my-2 flex justify-between">
               <span>NewConfirmed :</span>
@@ -38,6 +38,9 @@ const Card = ({
             </li>
             <li className="my-2 flex justify-between">
               <span>TotalRecovered :</span> {TotalRecovered}
+            </li>
+            <li className="my-2 flex justify-between">
+              <span>Date :</span> {moment(`${Date}`).format('MMMM Do YYYY')}
             </li>
           </ul>
         </div>
