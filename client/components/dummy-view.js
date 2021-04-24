@@ -2,16 +2,11 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import Head from './head'
 import Card from './card'
-import { getData } from '../redux/reducers/dataset'
 
 const Dummy = () => {
   const dispatch = useDispatch()
   const { data } = useSelector((s) => s.dataset)
   const { searchTerm } = useSelector((s) => s.dataset)
-
-  useEffect(() => {
-    dispatch(getData())
-  }, [])
 
   return (
     <div className="">
@@ -19,8 +14,10 @@ const Dummy = () => {
       <div className="min-h-screen flex flex-wrap justify-evenly py-10">
         {data
           .reduce((acc, rec) => {
-          const lowerSearchTerm = searchTerm.toLowerCase()
-          return rec.Country.toLowerCase().includes(lowerSearchTerm) || lowerSearchTerm === '' ? [...acc, rec] : acc
+            const lowerSearchTerm = searchTerm.toLowerCase()
+            return rec.Country.toLowerCase().includes(lowerSearchTerm) || lowerSearchTerm === ''
+              ? [...acc, rec]
+              : acc
           }, [])
           .map((country) => {
             const {
