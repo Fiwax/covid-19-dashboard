@@ -16,7 +16,7 @@ const Card = ({
     <div>
       <Head title="Hello" />
       <div className="flex my-2 mx-2">
-        <div className="px-4 pt-2 bg-gray-800 border-content flex flex-col text-white rounded-lg shadow-lg w-64 h-64">
+        <div className="px-4 pt-2 bg-gray-800 rounded  border-content flex flex-col text-white rounded-lg shadow-lg w-64 h-64">
           <h2 className="flex truncate justify-center text-center font-bold">{Country}</h2>
           <ul className="py-2 font-normal text-sm">
             <li className="my-2 flex justify-between">

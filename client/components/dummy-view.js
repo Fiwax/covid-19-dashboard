@@ -13,7 +13,7 @@ const Dummy = () => {
       <div className="min-h-screen flex flex-wrap justify-evenly py-10">
         {data
           .reduce((acc, rec) => {
-            const lowerSearchTerm = searchTerm.toLowerCase()
+            const lowerSearchTerm = searchTerm.toLowerCase().trim()
             return rec.Country.toLowerCase().includes(lowerSearchTerm) || lowerSearchTerm === ''
               ? [...acc, rec]
               : acc

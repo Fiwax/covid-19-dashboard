@@ -9,7 +9,7 @@ const Header = () => {
   return (
     <div className="flex justify-between items-center p-4 bg-gray-900">
       <div className="font-medium text-white my-0.5">
-        <div>
+        <div className="md:block hidden">
           Date: <span className="font-normal">{new Date().toLocaleString()}</span>
         </div>
         <div>
@@ -18,7 +18,7 @@ const Header = () => {
       </div>
       <div>
         <input
-          className="px-1 py-2 rounded"
+          className="pl-2 h-9 w-40 rounded-full focus:outline-none bg-gray-100 focus:bg-white"
           onChange={(e) => dispatch(getSearchText(e.target.value))}
           type="search"
           placeholder="Search a country.."
